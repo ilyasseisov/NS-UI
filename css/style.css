@@ -58,7 +58,6 @@ body {
 
 .container {
   width: 80%;
-  height: 300px;
   background: #ffdfdf;
   margin: 0 auto;
   padding: 60px;
@@ -80,8 +79,8 @@ body {
   display: -ms-grid;
   display: grid;
   gap: 10px;
-  -ms-grid-columns: (120px)[7];
-      grid-template-columns: repeat(7, 120px);
+  -ms-grid-columns: (120px)[8];
+      grid-template-columns: repeat(8, 120px);
   -ms-grid-rows: (120px)[3];
       grid-template-rows: repeat(3, 120px);
 }
@@ -89,6 +88,7 @@ body {
 .color {
   width: 120px;
   height: 120px;
+  border-radius: 6px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -179,6 +179,56 @@ body {
   grid-column: 7;
   -ms-grid-row: 1;
   grid-row: 1;
+}
+
+.color-grey {
+  background: #bfbfbf;
+  -ms-grid-column: 8;
+  grid-column: 8;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.color-grey-light {
+  background: #e3e3e3;
+  -ms-grid-column: 8;
+  grid-column: 8;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.color-grey-dark {
+  background: #9c9c9c;
+  -ms-grid-column: 8;
+  grid-column: 8;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.grid-typography {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 140px 600px;
+      grid-template-columns: 140px 600px;
+  text-align: left;
+  row-gap: 30px;
+}
+
+.grid-typography h1,
+.grid-typography h2,
+.grid-typography h3,
+.grid-typography h4,
+.grid-typography h5 {
+  font-weight: 700;
+}
+
+.grid-typography h6 {
+  font-weight: 400;
+}
+
+.grid-typography p {
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .mb10 {
