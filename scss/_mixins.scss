@@ -1,0 +1,6 @@
+@import "variables";
+
+@mixin font-face($weight) {
+  font-family: $stack-inter;
+  font-weight: $weight;
+}
