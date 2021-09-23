@@ -58,7 +58,6 @@ body {
 
 .container {
   width: 80%;
-  background: #ffdfdf;
   margin: 0 auto;
   padding: 60px;
   text-align: center;
@@ -66,7 +65,6 @@ body {
 
 .row {
   width: 100%;
-  background: #a0dcff;
   padding: 10px;
 }
 
