@@ -132,6 +132,98 @@ body {
 }
 //END Typography
 
+//Buttons
+.btn {
+  border: none;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  border-radius: 6px;
+  padding: 10px 15px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transition: all 0.3s;
+  color: white !important;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  &:hover,
+  &:focus {
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus:active {
+    outline: none;
+  }
+
+  &-default {
+    background: $color-blue;
+  }
+  &-default:hover {
+    background: $color-blue-dark;
+  }
+  ////////////////////////////////////
+  &-next {
+    background: $color-blue-dark;
+    overflow: hidden;
+  }
+  &-next:hover {
+    color: $color-blue-dark !important;
+  }
+  &-next::after {
+    content: url("../assets/svg/arrow-right.svg");
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    // background: rgb(255, 159, 159);
+    left: -24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+  }
+  &-next:hover::after {
+    left: 50%;
+  }
+  ////////////////////////////////////
+
+  &-back {
+    background: $color-blue-dark;
+    overflow: hidden;
+  }
+  &-back:hover {
+    color: $color-blue-dark !important;
+  }
+  &-back::after {
+    content: url("../assets/svg/arrow-left.svg");
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    // background: rgb(255, 159, 159);
+    left: 90px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+  }
+  &-back:hover::after {
+    left: 50%;
+  }
+  ////////////////////////////////////
+  &-disabled {
+    background-color: $color-grey;
+    color: rgba(255, 255, 255, 0.75);
+    opacity: 0.7;
+    filter: "alpha(opacity=70)";
+    cursor: not-allowed !important;
+  }
+}
+//END Buttons
+
 // Ulility
 .mb10 {
   margin-bottom: 10px;
