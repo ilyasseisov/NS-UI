@@ -133,6 +133,13 @@ body {
 //END Typography
 
 //Buttons
+
+.grid-btns {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(4, 140px);
+}
+
 .btn {
   border: none;
   font-size: 16px;
@@ -205,7 +212,7 @@ body {
     width: 24px;
     height: 20px;
     // background: rgb(255, 159, 159);
-    left: 90px;
+    left: calc(100% + 24px);
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.3s ease;

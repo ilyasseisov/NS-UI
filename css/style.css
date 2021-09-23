@@ -231,6 +231,15 @@ body {
   font-size: 14px;
 }
 
+.grid-btns {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -ms-grid-columns: (140px)[4];
+      grid-template-columns: repeat(4, 140px);
+}
+
 .btn {
   border: none;
   font-size: 16px;
@@ -311,7 +320,7 @@ body {
   position: absolute;
   width: 24px;
   height: 20px;
-  left: 90px;
+  left: calc(100% + 24px);
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
