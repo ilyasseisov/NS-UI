@@ -212,14 +212,20 @@ body {
   row-gap: 30px;
 }
 
-.grid-typography h1,
-.grid-typography h2,
-.grid-typography h3,
-.grid-typography h4,
-.grid-typography h5 {
+.grid-typography h1 {
   font-weight: 700;
 }
 
+.grid-typography h2 {
+  font-weight: 600;
+}
+
+.grid-typography h3,
+.grid-typography h4 {
+  font-weight: 500;
+}
+
+.grid-typography h5,
 .grid-typography h6 {
   font-weight: 400;
 }

@@ -115,13 +115,17 @@ body {
   grid-template-columns: 140px 600px;
   text-align: left;
   row-gap: 30px;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
+  h1 {
     font-weight: 700;
   }
+  h2 {
+    font-weight: 600;
+  }
+  h3,
+  h4 {
+    font-weight: 500;
+  }
+  h5,
   h6 {
     font-weight: 400;
   }
