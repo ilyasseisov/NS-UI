@@ -141,11 +141,13 @@ body {
 .grid-btns {
   display: grid;
   column-gap: 10px;
-  grid-template-columns: repeat(4, 140px);
+  row-gap: 10px;
+  grid-template-columns: repeat(5, 140px);
 }
 
 .btn {
   border: none;
+  outline: none;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.4;
@@ -158,20 +160,20 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  &:hover,
-  &:focus {
-    outline: none;
-    cursor: pointer;
-  }
+  // &:hover,
+  // &:focus {
+  //   outline: none;
+  //   cursor: pointer;
+  // }
 
-  &:active {
-    outline: none;
-    box-shadow: none;
-  }
+  // &:active {
+  //   outline: none;
+  //   box-shadow: none;
+  // }
 
-  &:focus:active {
-    outline: none;
-  }
+  // &:focus:active {
+  //   outline: none;
+  // }
 
   &-default {
     background: $color-blue;
@@ -232,6 +234,70 @@ body {
     filter: "alpha(opacity=70)";
     cursor: not-allowed !important;
   }
+  ////////////////////////////////////
+  &-submit {
+    background-color: $color-primary;
+    cursor: pointer;
+    span {
+      transition: all 0.2s;
+    }
+  }
+  &--loading span {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &--loading::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 3px solid transparent;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    ///////////////////////
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    ///////////////////////
+    animation: spin 1s ease 3 forwards;
+  }
+
+  &--loading::after {
+    content: url("../assets/svg/tick.svg");
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    ///////////////////////
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    ///////////////////////
+    opacity: 0;
+    animation: reveal 0.5s ease 3.1s forwards;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0turn);
+    }
+    99% {
+      transform: rotate(1turn);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes reveal {
+    to {
+      opacity: 1;
+    }
+  }
+  ////////////////////////////////////
 }
 //END Buttons
 

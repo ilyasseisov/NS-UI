@@ -240,12 +240,14 @@ body {
   display: grid;
   -webkit-column-gap: 10px;
           column-gap: 10px;
-  -ms-grid-columns: (140px)[4];
-      grid-template-columns: repeat(4, 140px);
+  row-gap: 10px;
+  -ms-grid-columns: (140px)[5];
+      grid-template-columns: repeat(5, 140px);
 }
 
 .btn {
   border: none;
+  outline: none;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.4;
@@ -259,21 +261,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-}
-
-.btn:hover, .btn:focus {
-  outline: none;
-  cursor: pointer;
-}
-
-.btn:active {
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.btn:focus:active {
-  outline: none;
 }
 
 .btn-default {
@@ -342,6 +329,94 @@ body {
   opacity: 0.7;
   filter: "alpha(opacity=70)";
   cursor: not-allowed !important;
+}
+
+.btn-submit {
+  background-color: #fea839;
+  cursor: pointer;
+}
+
+.btn-submit span {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn--loading span {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btn--loading::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 3px solid transparent;
+  border-left: 3px solid white;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-animation: spin 1s ease 3 forwards;
+          animation: spin 1s ease 3 forwards;
+}
+
+.btn--loading::after {
+  content: url("../assets/svg/tick.svg");
+  position: absolute;
+  width: 20px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+  -webkit-animation: reveal 0.5s ease 3.1s forwards;
+          animation: reveal 0.5s ease 3.1s forwards;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0turn);
+            transform: rotate(0turn);
+  }
+  99% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0turn);
+            transform: rotate(0turn);
+  }
+  99% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
 }
 
 .mb10 {
