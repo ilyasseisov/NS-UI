@@ -2,7 +2,7 @@
 
 body {
   @include font-face(400);
-  color: #34495e;
+  color: $color-font;
 }
 
 .container {
@@ -26,12 +26,12 @@ body {
 .grid-colors {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(8, 120px);
-  grid-template-rows: repeat(3, 120px);
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(3, 100px);
 }
 .color {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -160,20 +160,20 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  // &:hover,
-  // &:focus {
-  //   outline: none;
-  //   cursor: pointer;
-  // }
+  &:hover,
+  &:focus {
+    outline: none;
+    cursor: pointer;
+  }
 
-  // &:active {
-  //   outline: none;
-  //   box-shadow: none;
-  // }
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
 
-  // &:focus:active {
-  //   outline: none;
-  // }
+  &:focus:active {
+    outline: none;
+  }
 
   &-default {
     background: $color-blue;
@@ -237,7 +237,6 @@ body {
   ////////////////////////////////////
   &-submit {
     background-color: $color-primary;
-    cursor: pointer;
     span {
       transition: all 0.2s;
     }
@@ -301,6 +300,76 @@ body {
 }
 //END Buttons
 
+//Forms
+.grid-form-elements {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(4, 220px);
+}
+.form-group {
+  height: 42px;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.467;
+  padding: 8px 12px;
+  padding-left: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid $color-grey;
+  color: $color-font;
+}
+input:focus {
+  outline: none;
+}
+label {
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+  color: $color-grey;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+input:focus ~ label {
+  transform: translateY(-56px);
+}
+.underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.underline::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: $color-blue;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+input:focus ~ .underline::before {
+  transform: scaleX(1);
+}
+////////////////////////////////
+input.has--error ~ .underline {
+  background: $color-red;
+}
+input.has--success ~ .underline {
+  background: $color-green-dark;
+}
+input[disabled] {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+////////////////////////////////
+//END Forms
+
 // Ulility
 .mb10 {
   margin-bottom: 10px;
@@ -313,4 +382,8 @@ body {
 }
 .mb40 {
   margin-bottom: 40px;
+}
+
+.tal {
+  text-align: left;
 }
